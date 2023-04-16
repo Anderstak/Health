@@ -8,7 +8,7 @@ class MainRegisterActivity:AppCompatActivity() {
 
     lateinit var editLogin : EditText //называние с маленькой буквы
     lateinit var editPassword : EditText
-    
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
