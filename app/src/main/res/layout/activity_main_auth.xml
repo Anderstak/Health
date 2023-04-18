@@ -63,11 +63,11 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:layout_marginTop="20dp"
                 android:id="@+id/et_edit_password"
                 style="@style/TextStylePopupPlaceholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/customedit_text"
                 android:hint="@string/enter_password"
                 android:password="true"
