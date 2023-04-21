@@ -23,7 +23,6 @@
     <ImageView
         android:layout_width="38dp"
         android:layout_height="29dp"
-        app:srcCompat="@drawable/ic_launcher_search"
         tools:layout_editor_absoluteX="235dp"
         tools:layout_editor_absoluteY="150dp" />
 
@@ -37,7 +36,6 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--    android:fontFamily="@font/rubik"-->
 
 
     <EditText
@@ -48,7 +46,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_edittext"
-        android:hint="login"
+        android:hint="email"
         android:inputType="text"
         android:padding="14sp"
         android:textSize="18sp"
