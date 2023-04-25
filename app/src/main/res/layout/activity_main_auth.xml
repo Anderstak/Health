@@ -76,7 +76,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/b_sign_in"
+            android:id="@+id/b_save"
             style="@style/TextStyle17"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guide_right"
             app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintTop_toBottomOf="@id/b_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/b_save"
             app:layout_constraintWidth_default="spread">
 
 

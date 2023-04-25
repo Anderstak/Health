@@ -27,8 +27,14 @@ class MenuActivity : AppCompatActivity() {
                 openListOfExercise (name)
             }
         }
+        //создаем адаптер и присваеваем его recyclerView
         val adapter = MenuAdapter(this, onItemClickListener)
         recyclerView.adapter = adapter
+        //нажатие на кнопку профиля
+        buttonProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun init() {

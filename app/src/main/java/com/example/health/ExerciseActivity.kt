@@ -45,7 +45,7 @@ class ExerciseActivity : AppCompatActivity() {
         buttonBack.setOnClickListener {
             backScreen()
         }
-            //слушатель на кнопку следующий
+        //слушатель на кнопку следующий
         buttonNext.setOnClickListener {
             nextScreen()
         }
@@ -91,6 +91,8 @@ class ExerciseActivity : AppCompatActivity() {
                 //останавливаем цикл
                 break
             }
+            //если нету прдыдущих упражнений - открывает menuActivity
+            onBackPressed()
         }
     }
 
@@ -98,7 +100,7 @@ class ExerciseActivity : AppCompatActivity() {
         //получаем текущий заголовок
         var name = headliner.text.toString()
         //ищем с первого элемента до предпоследнего в списке заголовок
-        for (i in 0 until (examples.size-1)) {
+        for (i in 0 until (examples.size - 1)) {
             if (name.equals(examples.get(i).name)) {
                 //обновляем данные на экране
                 createActivityData(examples, i + 1)

@@ -12,6 +12,11 @@ public class Repository {
     private String userName= "login";
     private String password = "password";
     private String imageUrl;
+    private String name="";
+    private String email="";
+    private int numberOfExampleInGym;
+    private int numberOfExampleOutdoor;
+    private int numberOfHealthyEating;
     private List<ExampleItem> examplesInGym = new ArrayList<>();
     {
         ExampleItem exampleItem = new ExampleItem("Тяга блока", "В упражнении участвует практически весь " +
@@ -104,5 +109,45 @@ public class Repository {
 
     public void setExamplesOutdoor(List<ExampleItem> examplesOutdoor) {
         this.examplesOutdoor = examplesOutdoor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getNumberOfExampleInGym() {
+        return numberOfExampleInGym;
+    }
+
+    public void setNumberOfExampleInGym(int numberOfExampleInGym) {
+        this.numberOfExampleInGym = numberOfExampleInGym;
+    }
+
+    public int getNumberOfExampleOutdoor() {
+        return numberOfExampleOutdoor;
+    }
+
+    public void setNumberOfExampleOutdoor(int numberOfExampleOutdoor) {
+        this.numberOfExampleOutdoor = numberOfExampleOutdoor;
+    }
+
+    public int getNumberOfHealthyEating() {
+        return numberOfHealthyEating;
+    }
+
+    public void setNumberOfHealthyEating(int numberOfHealthyEating) {
+        this.numberOfHealthyEating = numberOfHealthyEating;
     }
 }

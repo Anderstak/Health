@@ -2,7 +2,6 @@ package com.example.health
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -34,7 +33,7 @@ class AuthorizationActivity : AppCompatActivity() {
         repository = Repository.getInstance()
         editLogin = findViewById(R.id.et_edit_login)
         editPassword = findViewById(R.id.et_edit_password)
-        buttonUp = findViewById(R.id.b_sign_in)
+        buttonUp = findViewById(R.id.b_save)
         buttonRegist = findViewById(R.id.tv_registration)
     }
     private fun login() {

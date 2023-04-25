@@ -35,6 +35,9 @@
         <activity
             android:name=".ExerciseActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
