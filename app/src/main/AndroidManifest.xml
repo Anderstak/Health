@@ -32,6 +32,9 @@
         <activity
             android:name=".MenuActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ExerciseActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
