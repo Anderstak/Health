@@ -20,65 +20,18 @@ class Repository private constructor() {
         }
     }
 
-    var userName = "login"
-    var password = "password"
+    var userName = ""
+    var password = ""
     var name = ""
     var email = ""
     var numberOfExampleInGym = 0
     var numberOfExampleOutdoor = 0
     var numberOfHealthyEating = 0
-    val examplesInGym = ArrayList<ExampleItem>().apply {
-        add(
-            ExampleItem(
-                "Тяга блока", "В упражнении участвует практически весь " +
-                        "верх тела. При технически правильной работе значительную нагрузку берут на себя " +
-                        "широчайшие мышцы спины.В упражнении участвует практически весь верх тела. При " +
-                        "технически правильной работе значительную нагрузку берут на себя широчайшие мышцы спины." +
-                        " \nВ качестве вспомогательных мышц активируются:\nбольшая круглая мышца спины\n" +
-                        " бицепсы\nпредплечье\nтрапециевидная мышца\n"
-            ).apply {
-                imageOne = (R.drawable.img_block_thrust_one)
-                imageTwo = (R.drawable.img_block_thrust_two)
-                imageThree = (R.drawable.img_block_thrust_three)
-            }
-        )
-        add(
-            ExampleItem(
-                "Подтягивание",
-                "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса.\n"
-            ).apply {
-                imageOne = (R.drawable.img_pull_up_one)
-                imageTwo = (R.drawable.img_pull_up_two)
-                imageThree = (R.drawable.img_pull_up_three)
-            }
-        )
-    }
-    val examplesOutdoor = ArrayList<ExampleItem>().apply {
-        add(
-            ExampleItem(
-                "Подтягивание",
-                "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса.\n"
-            ).apply {
-                imageOne = (R.drawable.img_pull_up_outdoor_one)
-                imageTwo = (R.drawable.img_pull_up_outdoor_two)
-                imageThree = (R.drawable.img_pull_up_three)
-            }
-        )
-    }
-    val healthyEating = ArrayList<ExampleItem>().apply {
-        add(
-            ExampleItem(
-                "Подтягивание",
-                "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса.\n"
-            ).apply {
-                imageOne = (R.drawable.img_pull_up_outdoor_one)
-                imageTwo = (R.drawable.img_pull_up_outdoor_two)
-                imageThree = (R.drawable.img_pull_up_three)
-            }
-        )
-    }
+    val examplesInGym = ArrayList<ExampleItem>()
+    val examplesOutdoor = ArrayList<ExampleItem>()
+    val healthyEating = ArrayList<ExampleItem>()
 
-    var menuCategory: List<String> = ArrayList(listOf("В спортзале", "Дома", "Здоровое питание"))
+    var menuCategory: List<String> = ArrayList()
 
 
     fun saveDataBase() {
@@ -88,15 +41,15 @@ class Repository private constructor() {
             "" + userName + ";" + password + ";" + name + ";" + email + ";" + numberOfExampleInGym + ";" + numberOfExampleOutdoor + ";" + numberOfHealthyEating + "|"
         var resultExamplesInGym = ""
         for (i in 0 until examplesInGym.size) {
-            resultExamplesInGym += examplesInGym[i].name + ";" + examplesInGym[i].imageOne + ";" + examplesInGym[i].imageTwo + ";" + examplesInGym[i].imageThree + ";"
+            resultExamplesInGym += examplesInGym[i].name + ";" + examplesInGym[i].value + ";" + examplesInGym[i].imageOne + ";" + examplesInGym[i].imageTwo + ";" + examplesInGym[i].imageThree + ";"
         }
         var resultExamplesOutdoor = ""
         for (i in 0 until examplesOutdoor.size) {
-            resultExamplesOutdoor += examplesOutdoor[i].name + ";" + examplesOutdoor[i].imageOne + ";" + examplesOutdoor[i].imageTwo + ";" + examplesOutdoor[i].imageThree + ";"
+            resultExamplesOutdoor += examplesOutdoor[i].name + ";" + examplesOutdoor[i].value + ";"+examplesOutdoor[i].imageOne+";"+examplesOutdoor[i].imageTwo+";"+examplesOutdoor[i].imageThree+";"
         }
         var resultHealthyEating = ""
         for (i in 0 until healthyEating.size) {
-            resultHealthyEating += healthyEating[i].name + ";" + healthyEating[i].imageOne + ";" + healthyEating[i].imageTwo + ";" + healthyEating[i].imageThree + ";"
+            resultHealthyEating += healthyEating[i].name + ";" + healthyEating[i].value + ";"+ healthyEating[i].imageOne +";"+healthyEating[i].imageTwo+";"+healthyEating[i].imageThree+";"
         }
         var resultMenuCategory = ""
         for (i in 0 until menuCategory.size) {
@@ -168,7 +121,7 @@ class Repository private constructor() {
             }
             healthyEating.add(exampleItem)
         }
-        var arrayMenu = arrayResult[4].split(";")
+        var arrayMenu = arrayResult[4].split(",")
         menuCategory = ArrayList(arrayMenu)
 
     }
