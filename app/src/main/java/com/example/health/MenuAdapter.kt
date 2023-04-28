@@ -15,7 +15,7 @@ class MenuAdapter(
 ) : RecyclerView.Adapter<MenuAdapter.MenuItemViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private val menuListItems: MutableList<String> = Repository.getInstance().menuCategory
+    private val menuListItems: MutableList<String> = Repository.getInstance().menuCategory as MutableList<String>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuItemViewHolder {
         val view = inflater.inflate(R.layout.menu_item, parent, false)

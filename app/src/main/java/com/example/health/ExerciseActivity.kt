@@ -1,6 +1,5 @@
 package com.example.health
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -37,7 +36,8 @@ class ExerciseActivity : AppCompatActivity() {
             examples = repository.examplesOutdoor
             createActivityData(examples, 0)
         } else if (nameExample.equals("Здоровое питание")) {
-
+            examples = repository.healthyEating
+            createActivityData(examples, 0)
         } else {
             Toast.makeText(this, "Ошибка загрузки", Toast.LENGTH_SHORT).show()
         }

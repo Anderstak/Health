@@ -108,6 +108,7 @@ class ProfileActivity : AppCompatActivity() {
         repository.numberOfExampleInGym = parseInt(inGymValue.text.get(0).toString())
         repository.numberOfExampleOutdoor = parseInt(outdoorValue.text.get(0).toString())
         repository.numberOfHealthyEating = parseInt(healthyEatingValue.text.get(0).toString())
+        repository.saveDataBase()
     }
     private fun loadValueFromRep() {
         //загружаем данные из репозитория
