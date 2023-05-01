@@ -5,8 +5,20 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#03DAC1</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFF</color>
     <color name="blue">#0000ff</color>
     <color name="grey">#1e000000</color>
+
+
+
+
+
+    <color name="text">#5791CB</color>
+    <color name="kontrOfButton">#0FC0F8</color>
+    <color name="Button"> #5791CB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="blueForMenu">#A2F1F6</color>
+
+
+
 </resources>

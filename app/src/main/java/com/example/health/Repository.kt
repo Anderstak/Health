@@ -9,7 +9,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Repository private constructor() {
-    companion object {
+    companion object { //TODO
         private var repository: Repository? = null
         fun getInstance(): Repository {
             if (repository == null) {
@@ -34,7 +34,7 @@ class Repository private constructor() {
     var menuCategory: List<String> = ArrayList()
 
 
-    fun saveDataBase() {
+    fun saveDataBase() { //TODO
         val database = Firebase.database
         val myRef = database.getReference("repository")
         var result =
@@ -60,7 +60,7 @@ class Repository private constructor() {
         myRef.setValue(result)
     }
 
-    private fun loadDataBase() {
+    private fun loadDataBase() { //TODO
         val database = Firebase.database
         val myRef = database.getReference("repository")
         myRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -74,7 +74,7 @@ class Repository private constructor() {
         })
     }
 
-    private fun writeInRepository(result: String) {
+    private fun writeInRepository(result: String) { //TODO
         var arrayResult = result.split("|")
         var arrayVariables = arrayResult[0].split(";")
         userName = arrayVariables[0]

@@ -40,7 +40,7 @@ class ProfileActivity : AppCompatActivity() {
         }
         buttonLogout.setOnClickListener{
             val intent = Intent(this, AuthorizationActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //TODO
             startActivity(intent)
             finish()
         }
@@ -91,7 +91,7 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
-    private fun writeValueInTextView(textView: TextView, difference: Int) {
+    private fun writeValueInTextView(textView: TextView, difference: Int) { //TODO
         var result = textView.text.toString()
         var value = parseInt(result.get(0).toString())
         if (difference == -1 && value > 0) {
