@@ -11,12 +11,11 @@ import java.util.*
 
 
 class Repository private constructor() {
-    companion object { //TODO
+    companion object {
         private var repository: Repository? = null
         fun getInstance(): Repository {
             if (repository == null) {
                 repository = Repository()
-                repository!!.saveDataBase()
                 repository!!.loadDataBase()
             }
             return repository!!
@@ -38,98 +37,35 @@ class Repository private constructor() {
 
 
     fun saveDataBase() {
-        val database = Firebase.database
-        val myRef = database.getReference("repository")
-        val gson = Gson()
-        var result =gson.toJson(repository)
-//            "" + userName + ";" + password + ";" + name + ";" + email + ";" + numberOfExampleInGym + ";" + numberOfExampleOutdoor + ";" + numberOfHealthyEating + "|"
-//        var resultExamplesInGym = ""
-//        for (i in 0 until examplesInGym.size) {
-//            resultExamplesInGym += examplesInGym[i].name + ";" + examplesInGym[i].value + ";" + examplesInGym[i].imageOne + ";" + examplesInGym[i].imageTwo + ";" + examplesInGym[i].imageThree + ";"
-//        }
-//        var resultExamplesOutdoor = ""
-//        for (i in 0 until examplesOutdoor.size) {
-//            resultExamplesOutdoor += examplesOutdoor[i].name + ";" + examplesOutdoor[i].value + ";"+examplesOutdoor[i].imageOne+";"+examplesOutdoor[i].imageTwo+";"+examplesOutdoor[i].imageThree+";"
-//        }
-//        var resultHealthyEating = ""
-//        for (i in 0 until healthyEating.size) {
-//            resultHealthyEating += healthyEating[i].name + ";" + healthyEating[i].value + ";"+ healthyEating[i].imageOne +";"+healthyEating[i].imageTwo+";"+healthyEating[i].imageThree+";"
-//        }
-//        var resultMenuCategory = ""
-//        for (i in 0 until menuCategory.size) {
-//            resultMenuCategory += menuCategory[i] + ";"
-//        }
-//        result += resultExamplesInGym + "|" + resultExamplesOutdoor + "|" + resultHealthyEating + "|" + menuCategory
-
-        myRef.setValue(result)
+        //ищем на сервере Firebase нужную бд по имени
+        val reference = Firebase.database.getReference("repository")
+        // преобразовываем класс репозитория в json
+        var repositoryToJson = Gson().toJson(repository)
+        //перезаписываем в бд json
+        reference.setValue(repositoryToJson)
     }
 
     private fun loadDataBase() {
-        val database = Firebase.database
-        val myRef = database.getReference("repository")
-        myRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        //ищем на сервере Firebase нужную бд по имени
+        val reference = Firebase.database.getReference("repository")
+        //отправляем запрос к бд на получение всех данных
+        reference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val builder = GsonBuilder()
-                val gson: Gson = builder.create()
+                //создаем объект gson для использования методов преобразования входящих в него
+                val gson: Gson = GsonBuilder().create()
+                //преобразовываем json в объект repository, сохраняем
                 repository = gson.fromJson(snapshot.value.toString(), Repository::class.java)
             }
 
+            //здесь может быть описана обработка ошибок при загрузке из бд, ничего не пишем
             override fun onCancelled(error: DatabaseError) {
             }
 
         })
+        //костыль, ожидание загрузки репозитория, подумать - доработать для автоматической загрузки
+        Thread.sleep(1000)
     }
 
-    private fun writeInRepository(result: String) { //TODO
-        var arrayResult = result.split("|")
-        var arrayVariables = arrayResult[0].split(";")
-        userName = arrayVariables[0]
-        password = arrayVariables[1]
-        name = arrayVariables[2]
-        email = arrayVariables[3]
-        numberOfExampleInGym = arrayVariables[4].toInt()
-        numberOfExampleOutdoor = arrayVariables[5].toInt()
-        numberOfHealthyEating = arrayVariables[6].toInt()
-        var arrayExamplesInGym = arrayResult[1].split(";")
-        for (i in 0 until arrayExamplesInGym.size step 5) {
-            if (i + 4 >= arrayExamplesInGym.size) {
-                break
-            }
-            val exampleItem = ExampleItem(arrayExamplesInGym[i], arrayExamplesInGym[i + 1]).apply {
-                imageOne = arrayExamplesInGym[i + 2].toInt()
-                imageTwo = arrayExamplesInGym[i + 3].toInt()
-                imageThree = arrayExamplesInGym[i + 4].toInt()
-            }
-            examplesInGym.add(exampleItem)
-        }
-        var arrayExamplesOutdoor = arrayResult[2].split(";")
-        for (i in 0 until arrayExamplesOutdoor.size step 5) {
-            if (i + 4 >= arrayExamplesOutdoor.size) {
-                break
-            }
-            val exampleItem =
-                ExampleItem(arrayExamplesOutdoor[i], arrayExamplesOutdoor[i + 1]).apply {
-                    imageOne = arrayExamplesOutdoor[i + 2].toInt()
-                    imageTwo = arrayExamplesOutdoor[i + 3].toInt()
-                    imageThree = arrayExamplesOutdoor[i + 4].toInt()
-                }
-            examplesOutdoor.add(exampleItem)
-        }
-        var arrayHealthyEating = arrayResult[3].split(";")
-        for (i in 0 until arrayHealthyEating.size step 5) {
-            if (i + 4 >= arrayHealthyEating.size) {
-                break
-            }
-            val exampleItem = ExampleItem(arrayHealthyEating[i], arrayHealthyEating[i + 1]).apply {
-                imageOne = arrayHealthyEating[i + 2].toInt()
-                imageTwo = arrayHealthyEating[i + 3].toInt()
-                imageThree = arrayHealthyEating[i + 4].toInt()
-            }
-            healthyEating.add(exampleItem)
-        }
-        var arrayMenu = arrayResult[4].split(",")
-        menuCategory = ArrayList(arrayMenu)
 
-    }
 }
 

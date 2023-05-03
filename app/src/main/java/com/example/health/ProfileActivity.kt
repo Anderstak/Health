@@ -27,6 +27,7 @@ class ProfileActivity : AppCompatActivity() {
     lateinit var healthyEatingDecrement: TextView
     lateinit var healthyEatingIncrement: TextView
     lateinit var buttonSave: Button
+    private val SAVED_AUTHORIZATION = "saved_authorization"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +41,10 @@ class ProfileActivity : AppCompatActivity() {
         }
         buttonLogout.setOnClickListener{
             val intent = Intent(this, AuthorizationActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //TODO
+                //также добавил очистку истории из бектрейса
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            // передаю через интент данные, что был осуществлен выход из приложения
+            intent.putExtra(SAVED_AUTHORIZATION, false)
             startActivity(intent)
             finish()
         }
