@@ -5,8 +5,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class Repository private constructor() {
     companion object { //TODO
@@ -14,6 +16,7 @@ class Repository private constructor() {
         fun getInstance(): Repository {
             if (repository == null) {
                 repository = Repository()
+                repository!!.saveDataBase()
                 repository!!.loadDataBase()
             }
             return repository!!
@@ -34,38 +37,41 @@ class Repository private constructor() {
     var menuCategory: List<String> = ArrayList()
 
 
-    fun saveDataBase() { //TODO
+    fun saveDataBase() {
         val database = Firebase.database
         val myRef = database.getReference("repository")
-        var result =
-            "" + userName + ";" + password + ";" + name + ";" + email + ";" + numberOfExampleInGym + ";" + numberOfExampleOutdoor + ";" + numberOfHealthyEating + "|"
-        var resultExamplesInGym = ""
-        for (i in 0 until examplesInGym.size) {
-            resultExamplesInGym += examplesInGym[i].name + ";" + examplesInGym[i].value + ";" + examplesInGym[i].imageOne + ";" + examplesInGym[i].imageTwo + ";" + examplesInGym[i].imageThree + ";"
-        }
-        var resultExamplesOutdoor = ""
-        for (i in 0 until examplesOutdoor.size) {
-            resultExamplesOutdoor += examplesOutdoor[i].name + ";" + examplesOutdoor[i].value + ";"+examplesOutdoor[i].imageOne+";"+examplesOutdoor[i].imageTwo+";"+examplesOutdoor[i].imageThree+";"
-        }
-        var resultHealthyEating = ""
-        for (i in 0 until healthyEating.size) {
-            resultHealthyEating += healthyEating[i].name + ";" + healthyEating[i].value + ";"+ healthyEating[i].imageOne +";"+healthyEating[i].imageTwo+";"+healthyEating[i].imageThree+";"
-        }
-        var resultMenuCategory = ""
-        for (i in 0 until menuCategory.size) {
-            resultMenuCategory += menuCategory[i] + ";"
-        }
-        result += resultExamplesInGym + "|" + resultExamplesOutdoor + "|" + resultHealthyEating + "|" + menuCategory
+        val gson = Gson()
+        var result =gson.toJson(repository)
+//            "" + userName + ";" + password + ";" + name + ";" + email + ";" + numberOfExampleInGym + ";" + numberOfExampleOutdoor + ";" + numberOfHealthyEating + "|"
+//        var resultExamplesInGym = ""
+//        for (i in 0 until examplesInGym.size) {
+//            resultExamplesInGym += examplesInGym[i].name + ";" + examplesInGym[i].value + ";" + examplesInGym[i].imageOne + ";" + examplesInGym[i].imageTwo + ";" + examplesInGym[i].imageThree + ";"
+//        }
+//        var resultExamplesOutdoor = ""
+//        for (i in 0 until examplesOutdoor.size) {
+//            resultExamplesOutdoor += examplesOutdoor[i].name + ";" + examplesOutdoor[i].value + ";"+examplesOutdoor[i].imageOne+";"+examplesOutdoor[i].imageTwo+";"+examplesOutdoor[i].imageThree+";"
+//        }
+//        var resultHealthyEating = ""
+//        for (i in 0 until healthyEating.size) {
+//            resultHealthyEating += healthyEating[i].name + ";" + healthyEating[i].value + ";"+ healthyEating[i].imageOne +";"+healthyEating[i].imageTwo+";"+healthyEating[i].imageThree+";"
+//        }
+//        var resultMenuCategory = ""
+//        for (i in 0 until menuCategory.size) {
+//            resultMenuCategory += menuCategory[i] + ";"
+//        }
+//        result += resultExamplesInGym + "|" + resultExamplesOutdoor + "|" + resultHealthyEating + "|" + menuCategory
 
         myRef.setValue(result)
     }
 
-    private fun loadDataBase() { //TODO
+    private fun loadDataBase() {
         val database = Firebase.database
         val myRef = database.getReference("repository")
         myRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                writeInRepository(snapshot.value.toString())
+                val builder = GsonBuilder()
+                val gson: Gson = builder.create()
+                repository = gson.fromJson(snapshot.value.toString(), Repository::class.java)
             }
 
             override fun onCancelled(error: DatabaseError) {
