@@ -37,6 +37,8 @@ class Repository private constructor() {
 
 
     fun saveDataBase() {
+        //просто загрука в бд данных
+//        addData(healthyEating)
         //ищем на сервере Firebase нужную бд по имени
         val reference = Firebase.database.getReference("repository")
         // преобразовываем класс репозитория в json
@@ -64,6 +66,14 @@ class Repository private constructor() {
         })
         //костыль, ожидание загрузки репозитория, подумать - доработать для автоматической загрузки
         Thread.sleep(1000)
+    }
+
+    private fun addData(examples:ArrayList<ExampleItem>){
+        val example = ExampleItem("textHeadline", "textValue")
+        example.imageOne=R.drawable.img_kartinka
+        example.imageTwo=R.drawable.img_kartinka
+        example.imageThree=R.drawable.img_kartinka
+        examples.add(example)
     }
 
 
