@@ -70,8 +70,6 @@ class AuthorizationActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             setAuthorized(true)
-        } else {
-            Toast.makeText(this, R.string.wrong_login, Toast.LENGTH_SHORT).show()
         }
     }
 

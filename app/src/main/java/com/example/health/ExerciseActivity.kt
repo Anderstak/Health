@@ -83,15 +83,21 @@ class ExerciseActivity : AppCompatActivity() {
     private fun backScreen() {
         //получаем текущий заголовок
         var name = headliner.text.toString()
+        //переменная для открытия прдыдущей activity
+        var isLoadBacActivity: Boolean = true
         //ищем со второго элемента до конца списка заголовок
         for (i in 1 until examples.size) {
             if (name.equals(examples.get(i).name)) {
                 //обновляем данные на экране
                 createActivityData(examples, i - 1)
+                //устанавливаем значение false
+                isLoadBacActivity = false
                 //останавливаем цикл
                 break
             }
-            //если нету прдыдущих упражнений - открывает menuActivity
+        }
+        //если нету прдыдущих упражнений - открывает menuActivity
+        if(isLoadBacActivity){
             onBackPressed()
         }
     }
