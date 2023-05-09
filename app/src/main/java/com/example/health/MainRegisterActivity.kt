@@ -37,9 +37,9 @@ class MainRegisterActivity : AppCompatActivity() {
     }
 
     private fun addNewLogin() {
-        if (editPasswordFirst.text.toString().equals(editPasswordSecond.text.toString())){
-            repository.password = editPasswordFirst.text.toString()
-            repository.userName = editLogin.text.toString()
+        if (editPasswordFirst.text.toString().trim().equals(editPasswordSecond.text.toString().trim())){
+            repository.password = editPasswordFirst.text.toString().trim()
+            repository.userName = editLogin.text.toString().trim()
                 //добавил сохранение нового аккаунта сразу в fairbase
             repository.saveDataBase()
             val intent = Intent(this, AuthorizationActivity::class.java)

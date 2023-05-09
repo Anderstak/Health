@@ -54,7 +54,7 @@ class AuthorizationActivity : AppCompatActivity() {
 
     //тут в принципе без изменений
     private fun isLogin(): Boolean {
-        if (editLogin.text.toString().equals(repository.userName) && editPassword.text.toString()
+        if (editLogin.text.toString().trim().equals(repository.userName) && editPassword.text.toString().trim()
                 .equals(repository.password)
         ) {
             return true
