@@ -20,7 +20,8 @@
             android:text="@string/or_log_in_through_the_app"
             app:layout_constraintEnd_toStartOf="@id/guide_right"
             app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/Button"/>
 
 
 
@@ -41,7 +42,7 @@
                 style="@style/TextStylePopupPlaceholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/customedit_text"
+                android:background="@drawable/custom_edittext"
                 android:hint="@string/enter_login"
                 android:textColor="@color/black" />
 
@@ -63,12 +64,12 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:layout_marginTop="20dp"
                 android:id="@+id/et_edit_password"
                 style="@style/TextStylePopupPlaceholder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/customedit_text"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
                 android:hint="@string/enter_password"
                 android:password="true"
                 android:textColor="@color/black" />
@@ -76,14 +77,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/b_sign_in"
+            android:id="@+id/b_save"
             style="@style/TextStyle17"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="26dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/Button"
             android:gravity="center"
             android:text="@string/enter"
             app:layout_constraintEnd_toStartOf="@id/guide_right"
@@ -101,17 +102,19 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guide_right"
             app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintTop_toBottomOf="@id/b_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/b_save"
             app:layout_constraintWidth_default="spread">
 
+
             <TextView
-                android:id="@+id/tv_forgot_your_password"
+                android:id="@+id/tv_information"
                 style="@style/Link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/forgot_your_password"
+                android:text="Информация"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/Button"/>
 
             <TextView
                 android:id="@+id/tv_registration"
@@ -120,7 +123,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/registration"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/Button"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
