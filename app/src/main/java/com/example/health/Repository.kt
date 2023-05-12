@@ -222,6 +222,15 @@ class Repository private constructor() {
         //exampleEleven.imageTwo = R.drawable.pelvic_lift2
         // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         healthyEating.add(exampleThirteen)
+
+        val exampleFourteen = ExampleItem(
+            "Пирамида сбалансированного питания",
+            "Можно тут убрать текст?\n"
+        )
+        exampleFourteen.imageOne = R.drawable.pyramid_food
+        //exampleEleven.imageTwo = R.drawable.pelvic_lift2
+        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        healthyEating.add(exampleFourteen)
     }
 
 

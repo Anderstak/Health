@@ -120,7 +120,7 @@ class ProfileActivity : AppCompatActivity() {
         email.setText(repository.email)
         inGymValue.text = repository.numberOfExampleInGym.toString()+"/6"
         outdoorValue.text = repository.numberOfExampleOutdoor.toString()+"/6"
-        healthyEatingValue.text = repository.numberOfHealthyEating.toString()+"/6"
+        healthyEatingValue.text = repository.numberOfHealthyEating.toString()+"/3"
     }
 
 }
