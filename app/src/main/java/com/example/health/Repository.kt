@@ -87,6 +87,7 @@ class Repository private constructor() {
         exampleZero.imageThree = R.drawable.img_block_thrust_three
         examplesInGym.add(exampleZero)
 
+
         val exampleOne = ExampleItem(
             "Подтягивание",
             "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса"
@@ -97,32 +98,41 @@ class Repository private constructor() {
         examplesInGym.add(exampleOne)
 
         val exampleTwo = ExampleItem(
+            "Подтягивание",
+            "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса"
+        )
+        exampleTwo.imageOne = R.drawable.img_pull_up_outdoor_one
+        exampleTwo.imageTwo = R.drawable.img_pull_up_outdoor_two
+        exampleTwo.imageThree = R.drawable.img_pull_up_three
+        examplesInGym.add(exampleTwo)
+
+        val exampleThree = ExampleItem(
             "Сгибание ног",
             "Основными работающими мышцами являются:\\nмышцы задней поверхности бедра\\nОсновными " +
                     "работающими мышцами являются:\\nмышцы задней поверхности бедра\\n"
         )
-        exampleTwo.imageOne = R.drawable.leg_curel_one
-        exampleTwo.imageTwo = R.drawable.leg_curel_two
-        examplesInGym.add(exampleTwo)
+        exampleThree.imageOne = R.drawable.leg_curel_one
+        exampleThree.imageTwo = R.drawable.leg_curel_two
+        examplesInGym.add(exampleThree)
 
-        val exampleThree = ExampleItem(
+        val exampleFour = ExampleItem(
             "Жим ногами",
             "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
                     " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
         )
-        exampleThree.imageOne = R.drawable.leg_press_one
-        exampleThree.imageTwo = R.drawable.leg_press_two
-        exampleThree.imageThree = R.drawable.leg_press_three
-        examplesInGym.add(exampleThree)
+        exampleFour.imageOne = R.drawable.leg_press_one
+        exampleFour.imageTwo = R.drawable.leg_press_two
+        exampleFour.imageThree = R.drawable.leg_press_three
+        examplesInGym.add(exampleFour)
 
-        val exampleFour = ExampleItem(
+        val exampleFive = ExampleItem(
             "Гиперэкстензия",
             "Гиперэкстензия — это изолирующее упражнение для развития мышц спины, ягодиц, коленных " +
                     "сгибателей. Так же позволяет укрепить мышцы позвоночного столба"
         )
-        exampleFour.imageOne = R.drawable.hyperextension_one
-        exampleFour.imageTwo = R.drawable.hyperextension_two
-        examplesInGym.add(exampleFour)
+        exampleFive.imageOne = R.drawable.hyperextension_one
+        exampleFive.imageTwo = R.drawable.hyperextension_two
+        examplesInGym.add(exampleFive)
     }
 
     private fun reData() {
