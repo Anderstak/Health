@@ -30,6 +30,7 @@ class Repository private constructor() {
     var numberOfExampleOutdoor = 0
     var numberOfHealthyEating = 0
     val examplesInGym = ArrayList<ExampleItem>()
+    val examplesAtHome = ArrayList<ExampleItem>()
     val examplesOutdoor = ArrayList<ExampleItem>()
     val healthyEating = ArrayList<ExampleItem>()
 
@@ -124,6 +125,15 @@ class Repository private constructor() {
         exampleFour.imageTwo = R.drawable.hyperextension_two
         examplesInGym.add(exampleFour)
 
+        val exampleFive = ExampleItem(
+            "Гиперэкстензия",
+            "Гиперэкстензия — это изолирующее упражнение для развития мышц спины, ягодиц, коленных " +
+                    "сгибателей. Так же позволяет укрепить мышцы позвоночного столба"
+        )
+        exampleFour.imageOne = R.drawable.hyperextension_one
+        exampleFour.imageTwo = R.drawable.hyperextension_two
+        examplesInGym.add(exampleFour)
+
 
         //ДОМА
         val exampleSix = ExampleItem(
@@ -137,49 +147,38 @@ class Repository private constructor() {
         exampleSix.imageOne = R.drawable.push_up1
         exampleSix.imageTwo = R.drawable.push_up_half
         exampleSix.imageThree = R.drawable.push_up2
-        examplesInGym.add(exampleThree)
+        examplesAtHome.add(exampleSix)
 
         val exampleSeven = ExampleItem(
-            "Жим ногами",
-            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
-                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+            "Разведение рук",
+            "Разводка рук стоя тренирует среднюю дельту, расстягивает грудную клетку\\n"
         )
         exampleSeven.imageOne = R.drawable.arm_stretching1
         exampleSeven.imageTwo = R.drawable.arm_stretching_half
         exampleSeven.imageThree = R.drawable.arm_stretching2
-        examplesInGym.add(exampleThree)
+        examplesAtHome.add(exampleSeven)
 
         val exampleEight = ExampleItem(
-            "Жим ногами",
-            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
-                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+            "Планка",
+            "Планка – универсальное упражнение, которое задействует множество групп мышц во время выполнения, такие как мышцы рук, пресса, спины , ног и бедер , шеи" +
+                      "Осанка становится прямее и ровнее, а воздействие на мышцы пресса делает живот красивым и подтянутым\\n"
         )
         exampleEight.imageOne = R.drawable.plank_main
         exampleEight.imageTwo = R.drawable.plank_left
         exampleEight.imageThree = R.drawable.plunk_right
-        examplesInGym.add(exampleThree)
+        examplesAtHome.add(exampleEight)
 
         val exampleNine = ExampleItem(
-            "Жим ногами",
-            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
-                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+            "Пресс",
+            "Пресс образуют четыре мышечные группы: прямая и поперечная мышцы живота, внешняя косая и внутренняя косая мышцы. Поэтому получить проработанный пресс можно только комплексом упражнений - нагружая каждую мышцу живота отдельно и в комбинации с другими\\n"
         )
         exampleNine.imageOne = R.drawable.press1
         exampleNine.imageTwo = R.drawable.press3
       //  exampleThree.imageThree = R.drawable.press2
-        examplesInGym.add(exampleThree)
+        examplesAtHome.add(exampleNine)
+
 
         val exampleTen = ExampleItem(
-            "Жим ногами",
-            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
-                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
-        )
-        exampleTen.imageOne = R.drawable.plank_main
-        exampleTen.imageTwo = R.drawable.plank_left
-        exampleTen.imageThree = R.drawable.plunk_right
-        examplesInGym.add(exampleThree)
-
-        val exampleEleventh = ExampleItem(
             "Расслабление спины на коленях",
             "Исходное положение: упор на колени и ладони.\n" +
                     "1.\tНа выдохе плавно погнуть спину вверх\n" +
@@ -188,20 +187,20 @@ class Repository private constructor() {
                     "4.\tВернуться в исх. Положение\n" +
                     "5.\tКоличество повторений: 20 раз.\n"
         )
-        exampleEleventh.imageOne = R.drawable.relaxation_of_the_back_on_the_knees1
-        exampleEleventh.imageTwo = R.drawable.relaxation_of_the_back_on_the_knees2
-        exampleEleventh.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
-        examplesInGym.add(exampleThree)
+        exampleTen.imageOne = R.drawable.relaxation_of_the_back_on_the_knees1
+        exampleTen.imageTwo = R.drawable.relaxation_of_the_back_on_the_knees2
+        exampleTen.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        examplesAtHome.add(exampleTen)
 
-        val exampleTwelve = ExampleItem(
+        val exampleEleven = ExampleItem(
             "Подъем таза",
             "Исходное Положение: лежа на спине, ноги согнуты в коленных суставах, пятки на полу, руки вдоль тела.\n" +
                     "На выдохе оторвать таз от пола как можно выше и также на выдохе врнуться  исх.положене.\n"
         )
-        exampleTwelve.imageOne = R.drawable.pelvic_lift1
-        exampleTwelve.imageTwo = R.drawable.pelvic_lift2
+        exampleEleven.imageOne = R.drawable.pelvic_lift1
+        exampleEleven.imageTwo = R.drawable.pelvic_lift2
        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
-        examplesInGym.add(exampleThree)
+        examplesAtHome.add(exampleEleven)
     }
 
 
