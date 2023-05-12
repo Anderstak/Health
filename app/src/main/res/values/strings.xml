@@ -31,4 +31,5 @@
     <string name="wrong_registration">Неверно заполнены поля регестрации</string>
     <string name="app_name">lol</string>
     <string name="add_url">Введите адрес картинки</string>
+    <string name="text_inf">lol будет инфа</string>
 </resources>

@@ -68,7 +68,8 @@ class Repository private constructor() {
         Thread.sleep(1000)
     }
 
-    private fun addData(examples:ArrayList<ExampleItem>){
+    private fun addData(){
+        var list: Arraylist<Examples> =  examplesInGym
         val example = ExampleItem("textHeadline", "textValue")
         example.imageOne=R.drawable.img_kartinka
         example.imageTwo=R.drawable.img_kartinka
