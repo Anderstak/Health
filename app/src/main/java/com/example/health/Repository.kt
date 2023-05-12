@@ -124,16 +124,16 @@ class Repository private constructor() {
         )
         exampleFour.imageOne = R.drawable.hyperextension_one
         exampleFour.imageTwo = R.drawable.hyperextension_two
+
         examplesInGym.add(exampleFour)
 
         val exampleFive = ExampleItem(
-            "Гиперэкстензия",
-            "Гиперэкстензия — это изолирующее упражнение для развития мышц спины, ягодиц, коленных " +
-                    "сгибателей. Так же позволяет укрепить мышцы позвоночного столба"
+            "Полноценные подтягивания",
+            "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса"
         )
-        exampleFour.imageOne = R.drawable.hyperextension_one
-        exampleFour.imageTwo = R.drawable.hyperextension_two
-        examplesInGym.add(exampleFour)
+        exampleFive.imageOne = R.drawable.img_pull_up_outdoor_one
+        exampleFive.imageTwo = R.drawable.img_pull_up_outdoor_two
+        examplesInGym.add(exampleFive)
 
 
         //ДОМА
