@@ -134,9 +134,9 @@ class Repository private constructor() {
                     "Ягодичные мышцы\n" +
                     "Мышцы пресса и поясницы\n"
         )
-        exampleThree.imageOne = R.drawable.push_up1
-        exampleThree.imageTwo = R.drawable.push_up_half
-        exampleThree.imageThree = R.drawable.push_up2
+        exampleSix.imageOne = R.drawable.push_up1
+        exampleSix.imageTwo = R.drawable.push_up_half
+        exampleSix.imageThree = R.drawable.push_up2
         examplesInGym.add(exampleThree)
 
         val exampleSeven = ExampleItem(
@@ -144,9 +144,9 @@ class Repository private constructor() {
             "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
                     " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
         )
-        exampleThree.imageOne = R.drawable.arm_stretching1
-        exampleThree.imageTwo = R.drawable.arm_stretching_half
-        exampleThree.imageThree = R.drawable.arm_stretching2
+        exampleSeven.imageOne = R.drawable.arm_stretching1
+        exampleSeven.imageTwo = R.drawable.arm_stretching_half
+        exampleSeven.imageThree = R.drawable.arm_stretching2
         examplesInGym.add(exampleThree)
 
         val exampleEight = ExampleItem(
@@ -154,9 +154,9 @@ class Repository private constructor() {
             "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
                     " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
         )
-        exampleThree.imageOne = R.drawable.plank_main
-        exampleThree.imageTwo = R.drawable.plank_left
-        exampleThree.imageThree = R.drawable.plunk_right
+        exampleEight.imageOne = R.drawable.plank_main
+        exampleEight.imageTwo = R.drawable.plank_left
+        exampleEight.imageThree = R.drawable.plunk_right
         examplesInGym.add(exampleThree)
 
         val exampleNine = ExampleItem(
@@ -164,8 +164,8 @@ class Repository private constructor() {
             "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
                     " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
         )
-        exampleThree.imageOne = R.drawable.press1
-        exampleThree.imageTwo = R.drawable.press3
+        exampleNine.imageOne = R.drawable.press1
+        exampleNine.imageTwo = R.drawable.press3
       //  exampleThree.imageThree = R.drawable.press2
         examplesInGym.add(exampleThree)
 
@@ -174,9 +174,9 @@ class Repository private constructor() {
             "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
                     " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
         )
-        exampleThree.imageOne = R.drawable.plank_main
-        exampleThree.imageTwo = R.drawable.plank_left
-        exampleThree.imageThree = R.drawable.plunk_right
+        exampleTen.imageOne = R.drawable.plank_main
+        exampleTen.imageTwo = R.drawable.plank_left
+        exampleTen.imageThree = R.drawable.plunk_right
         examplesInGym.add(exampleThree)
 
         val exampleEleventh = ExampleItem(
@@ -188,9 +188,9 @@ class Repository private constructor() {
                     "4.\tВернуться в исх. Положение\n" +
                     "5.\tКоличество повторений: 20 раз.\n"
         )
-        exampleThree.imageOne = R.drawable.relaxation_of_the_back_on_the_knees1
-        exampleThree.imageTwo = R.drawable.relaxation_of_the_back_on_the_knees2
-        exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        exampleEleventh.imageOne = R.drawable.relaxation_of_the_back_on_the_knees1
+        exampleEleventh.imageTwo = R.drawable.relaxation_of_the_back_on_the_knees2
+        exampleEleventh.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         examplesInGym.add(exampleThree)
 
         val exampleTwelve = ExampleItem(
@@ -198,8 +198,8 @@ class Repository private constructor() {
             "Исходное Положение: лежа на спине, ноги согнуты в коленных суставах, пятки на полу, руки вдоль тела.\n" +
                     "На выдохе оторвать таз от пола как можно выше и также на выдохе врнуться  исх.положене.\n"
         )
-        exampleThree.imageOne = R.drawable.pelvic_lift1
-        exampleThree.imageTwo = R.drawable.pelvic_lift2
+        exampleTwelve.imageOne = R.drawable.pelvic_lift1
+        exampleTwelve.imageTwo = R.drawable.pelvic_lift2
        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         examplesInGym.add(exampleThree)
     }
