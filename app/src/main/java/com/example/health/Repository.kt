@@ -38,8 +38,8 @@ class Repository private constructor() {
 
     fun saveDataBase() {
         //если крашится "В спортазале" разкоментировать и сохранить через профиль
-//        clear()
-//        addData()
+        clear()
+        addData()
         //изменение элемента в репозитории
 //        reData()
 
@@ -123,7 +123,89 @@ class Repository private constructor() {
         exampleFour.imageOne = R.drawable.hyperextension_one
         exampleFour.imageTwo = R.drawable.hyperextension_two
         examplesInGym.add(exampleFour)
+
+
+        //ДОМА
+        val exampleSix = ExampleItem(
+            "Отжимания",
+            "Основную часть нагрузки при выполнении отжимания берут на себя грудные мышцы и трицепсы.\n" +
+                    "Внешняя части грудных мышц\n" +
+                    "Медиальный пучок трицепса\n" +
+                    "Ягодичные мышцы\n" +
+                    "Мышцы пресса и поясницы\n"
+        )
+        exampleThree.imageOne = R.drawable.push_up1
+        exampleThree.imageTwo = R.drawable.push_up_half
+        exampleThree.imageThree = R.drawable.push_up2
+        examplesInGym.add(exampleThree)
+
+        val exampleSeven = ExampleItem(
+            "Жим ногами",
+            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
+                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+        )
+        exampleThree.imageOne = R.drawable.arm_stretching1
+        exampleThree.imageTwo = R.drawable.arm_stretching_half
+        exampleThree.imageThree = R.drawable.arm_stretching2
+        examplesInGym.add(exampleThree)
+
+        val exampleEight = ExampleItem(
+            "Жим ногами",
+            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
+                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+        )
+        exampleThree.imageOne = R.drawable.plank_main
+        exampleThree.imageTwo = R.drawable.plank_left
+        exampleThree.imageThree = R.drawable.plunk_right
+        examplesInGym.add(exampleThree)
+
+        val exampleNine = ExampleItem(
+            "Жим ногами",
+            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
+                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+        )
+        exampleThree.imageOne = R.drawable.press1
+        exampleThree.imageTwo = R.drawable.press3
+      //  exampleThree.imageThree = R.drawable.press2
+        examplesInGym.add(exampleThree)
+
+        val exampleTen = ExampleItem(
+            "Жим ногами",
+            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
+                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+        )
+        exampleThree.imageOne = R.drawable.plank_main
+        exampleThree.imageTwo = R.drawable.plank_left
+        exampleThree.imageThree = R.drawable.plunk_right
+        examplesInGym.add(exampleThree)
+
+        val exampleEleventh = ExampleItem(
+            "Расслабление спины на коленях",
+            "Исходное положение: упор на колени и ладони.\n" +
+                    "1.\tНа выдохе плавно погнуть спину вверх\n" +
+                    "2.\tВернуться в исх. Положение\n" +
+                    "3.\tНа выдохе плавно прогнуть спину вниз\n" +
+                    "4.\tВернуться в исх. Положение\n" +
+                    "5.\tКоличество повторений: 20 раз.\n"
+        )
+        exampleThree.imageOne = R.drawable.relaxation_of_the_back_on_the_knees1
+        exampleThree.imageTwo = R.drawable.relaxation_of_the_back_on_the_knees2
+        exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        examplesInGym.add(exampleThree)
+
+        val exampleTwelve = ExampleItem(
+            "Подъем таза",
+            "Исходное Положение: лежа на спине, ноги согнуты в коленных суставах, пятки на полу, руки вдоль тела.\n" +
+                    "На выдохе оторвать таз от пола как можно выше и также на выдохе врнуться  исх.положене.\n"
+        )
+        exampleThree.imageOne = R.drawable.pelvic_lift1
+        exampleThree.imageTwo = R.drawable.pelvic_lift2
+       // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        examplesInGym.add(exampleThree)
     }
+
+
+
 
     private fun reData() {
         val example = examplesInGym.get(2)
