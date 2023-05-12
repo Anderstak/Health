@@ -38,7 +38,10 @@ class Repository private constructor() {
 
     fun saveDataBase() {
         //просто загрука в бд данных
-//        addData(healthyEating)
+//        addData()
+//        reData()
+//        clear()
+
         //ищем на сервере Firebase нужную бд по имени
         val reference = Firebase.database.getReference("repository")
         // преобразовываем класс репозитория в json
@@ -69,12 +72,27 @@ class Repository private constructor() {
     }
 
     private fun addData(){
-        var list: Arraylist<Examples> =  examplesInGym
-        val example = ExampleItem("textHeadline", "textValue")
-        example.imageOne=R.drawable.img_kartinka
-        example.imageTwo=R.drawable.img_kartinka
-        example.imageThree=R.drawable.img_kartinka
-        examples.add(example)
+        val exampleZero = ExampleItem("Жим ногами", "В упражнении задействованы все ягодичные мышцы и мышцы ног:\nгрушевидная мышца\n" +
+                "квадратная мышца бедра\n" +
+                "бицепс бедра \n" +
+                "четырехглавая мышца бедра\n" +
+                " приводящие мышцы бедра\n")
+        exampleZero.imageOne=R.drawable.leg_press_one
+        exampleZero.imageTwo=R.drawable.leg_press_two
+        exampleZero.imageThree=R.drawable.leg_press_three
+        examplesInGym.add(exampleZero)
+    }
+    private fun reData(){
+        val example = examplesInGym.get(2)
+//        example.imageOne=R.drawable.img_pull_up_outdoor_one
+//        example.imageTwo=R.drawable.img_pull_up_outdoor_two
+        example.imageThree=R.drawable.img_white_box
+        examplesInGym.removeAt(2)
+        examplesInGym.add(2, example)
+    }
+    private fun clear(){
+        examplesOutdoor.removeAll(examplesOutdoor)
+        healthyEating.removeAll(healthyEating)
     }
 
 
