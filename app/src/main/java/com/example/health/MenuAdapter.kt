@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -34,11 +35,11 @@ class MenuAdapter(
     inner class MenuItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val view: View = itemView
-        private val menuHeadline: TextView = itemView.findViewById(R.id.tv_menu_item)
+        private val menuHeadline: Button = itemView.findViewById(R.id.tv_menu_item)
 
         fun bind(menuItemModel: String) {
             menuHeadline.text = menuItemModel
-            view.setOnClickListener {
+            menuHeadline.setOnClickListener {
                 onItemClickListener.invoke(menuItemModel)
             }
         }
