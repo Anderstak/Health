@@ -15,6 +15,7 @@ class AuthorizationActivity : AppCompatActivity() {
     lateinit var editPassword: EditText
     lateinit var buttonUp: Button
     lateinit var buttonRegist: TextView
+    lateinit var buttonInformation: TextView
     lateinit var repository: Repository
 
     //переменные необходимые для записи на устройстве "осуществлен вход в аккаунт или нет"
@@ -40,6 +41,10 @@ class AuthorizationActivity : AppCompatActivity() {
             // разбил на 2 метода
             login(isLogin())
         }
+        buttonInformation.setOnClickListener {
+            val intent = Intent(this, InformationActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun init() {
@@ -50,6 +55,7 @@ class AuthorizationActivity : AppCompatActivity() {
         editPassword = findViewById(R.id.et_edit_password)
         buttonUp = findViewById(R.id.b_save)
         buttonRegist = findViewById(R.id.tv_registration)
+        buttonInformation = findViewById(R.id.tv_information)
     }
 
     //тут в принципе без изменений
