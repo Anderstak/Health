@@ -37,10 +37,12 @@ class Repository private constructor() {
 
 
     fun saveDataBase() {
-        //просто загрука в бд данных
-//        addData()
-//        reData()
+        //если крашится "В спортазале" разкоментировать и сохранить через профиль
 //        clear()
+//        addData()
+        //изменение элемента в репозитории
+//        reData()
+
 
         //ищем на сервере Firebase нужную бд по имени
         val reference = Firebase.database.getReference("repository")
@@ -71,26 +73,69 @@ class Repository private constructor() {
         Thread.sleep(1000)
     }
 
-    private fun addData(){
-        val exampleZero = ExampleItem("Жим ногами", "В упражнении задействованы все ягодичные мышцы и мышцы ног:\nгрушевидная мышца\n" +
-                "квадратная мышца бедра\n" +
-                "бицепс бедра \n" +
-                "четырехглавая мышца бедра\n" +
-                " приводящие мышцы бедра\n")
-        exampleZero.imageOne=R.drawable.leg_press_one
-        exampleZero.imageTwo=R.drawable.leg_press_two
-        exampleZero.imageThree=R.drawable.leg_press_three
+    private fun addData() {
+        val exampleZero = ExampleItem(
+            "Тяга блока",
+            "В упражнении участвует практически весь верх тела. При технически правильной работе " +
+                    "значительную нагрузку берут на себя широчайшие мышцы спины.В упражнении участвует " +
+                    "практически весь верх тела. При технически правильной работе значительную нагрузку " +
+                    "берут на себя широчайшие мышцы спины. \\nВ качестве вспомогательных мышц " +
+                    "активируются:\\nбольшая круглая мышца спины\\n бицепсы\\nпредплечье\\nтрапециевидная мышца\\n"
+        )
+        exampleZero.imageOne = R.drawable.img_block_thrust_one
+        exampleZero.imageTwo = R.drawable.img_block_thrust_two
+        exampleZero.imageThree = R.drawable.img_block_thrust_three
         examplesInGym.add(exampleZero)
+
+        val exampleOne = ExampleItem(
+            "Подтягивание",
+            "Задействованы сразу несколько групп мышц спины, груди, живота, плечевого пояса"
+        )
+        exampleOne.imageOne = R.drawable.img_pull_up_one
+        exampleOne.imageTwo = R.drawable.img_pull_up_two
+        exampleOne.imageThree = R.drawable.img_pull_up_three
+        examplesInGym.add(exampleOne)
+
+        val exampleTwo = ExampleItem(
+            "Сгибание ног",
+            "Основными работающими мышцами являются:\\nмышцы задней поверхности бедра\\nОсновными " +
+                    "работающими мышцами являются:\\nмышцы задней поверхности бедра\\n"
+        )
+        exampleTwo.imageOne = R.drawable.leg_curel_one
+        exampleTwo.imageTwo = R.drawable.leg_curel_two
+        examplesInGym.add(exampleTwo)
+
+        val exampleThree = ExampleItem(
+            "Жим ногами",
+            "В упражнении задействованы все ягодичные мышцы и мышцы ног:\\nгрушевидная мышца\\nквадратная" +
+                    " мышца бедра\\nбицепс бедра \\nчетырехглавая мышца бедра\\n приводящие мышцы бедра\\n"
+        )
+        exampleThree.imageOne = R.drawable.leg_press_one
+        exampleThree.imageTwo = R.drawable.leg_press_two
+        exampleThree.imageThree = R.drawable.leg_press_three
+        examplesInGym.add(exampleThree)
+
+        val exampleFour = ExampleItem(
+            "Гиперэкстензия",
+            "Гиперэкстензия — это изолирующее упражнение для развития мышц спины, ягодиц, коленных " +
+                    "сгибателей. Так же позволяет укрепить мышцы позвоночного столба"
+        )
+        exampleFour.imageOne = R.drawable.hyperextension_one
+        exampleFour.imageTwo = R.drawable.hyperextension_two
+        examplesInGym.add(exampleFour)
     }
-    private fun reData(){
+
+    private fun reData() {
         val example = examplesInGym.get(2)
-//        example.imageOne=R.drawable.img_pull_up_outdoor_one
-//        example.imageTwo=R.drawable.img_pull_up_outdoor_two
-        example.imageThree=R.drawable.img_white_box
+        example.imageOne = R.drawable.img_pull_up_outdoor_one
+        example.imageTwo = R.drawable.img_pull_up_outdoor_two
+        example.imageThree = R.drawable.img_white_box
         examplesInGym.removeAt(2)
         examplesInGym.add(2, example)
     }
-    private fun clear(){
+
+    private fun clear() {
+        examplesInGym.removeAll(examplesInGym)
         examplesOutdoor.removeAll(examplesOutdoor)
         healthyEating.removeAll(healthyEating)
     }
