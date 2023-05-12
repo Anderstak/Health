@@ -31,7 +31,6 @@ class Repository private constructor() {
     var numberOfHealthyEating = 0
     val examplesInGym = ArrayList<ExampleItem>()
     val examplesAtHome = ArrayList<ExampleItem>()
-    val examplesOutdoor = ArrayList<ExampleItem>()
     val healthyEating = ArrayList<ExampleItem>()
 
     var menuCategory: List<String> = ArrayList()
@@ -75,6 +74,8 @@ class Repository private constructor() {
     }
 
     private fun addData() {
+
+        //В спортзале
         val exampleZero = ExampleItem(
             "Тяга блока",
             "В упражнении участвует практически весь верх тела. При технически правильной работе " +
@@ -201,6 +202,26 @@ class Repository private constructor() {
         exampleEleven.imageTwo = R.drawable.pelvic_lift2
        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         examplesAtHome.add(exampleEleven)
+
+
+        //Питание
+        val exampleTwelve = ExampleItem(
+            "Нормы потребления, жиров, белков углеводов ",
+            "Можно тут убрать текст?\n"
+        )
+        exampleEleven.imageOne = R.drawable.img_norm_calories
+        //exampleEleven.imageTwo = R.drawable.pelvic_lift2
+        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        healthyEating.add(exampleEleven)
+
+        val exampleThirteen = ExampleItem(
+            "Функции белков, жиров и углеводов",
+            "Можно тут убрать текст?\n"
+        )
+        exampleThirteen.imageOne = R.drawable.protein_functions
+        //exampleEleven.imageTwo = R.drawable.pelvic_lift2
+        // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
+        healthyEating.add(exampleThirteen)
     }
 
 
@@ -217,7 +238,7 @@ class Repository private constructor() {
 
     private fun clear() {
         examplesInGym.removeAll(examplesInGym)
-        examplesOutdoor.removeAll(examplesOutdoor)
+        examplesAtHome.removeAll(examplesAtHome)
         healthyEating.removeAll(healthyEating)
     }
 

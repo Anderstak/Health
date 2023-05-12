@@ -33,7 +33,7 @@ class ExerciseActivity : AppCompatActivity() {
             examples = repository.examplesInGym
             createActivityData(examples, 0)
         } else if (nameExample.equals("Дома")) {
-            examples = repository.examplesOutdoor
+            examples = repository.examplesAtHome
             createActivityData(examples, 0)
         } else if (nameExample.equals("Здоровое питание")) {
             examples = repository.healthyEating
