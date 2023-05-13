@@ -209,7 +209,7 @@ class Repository private constructor() {
             "Нормы потребления, жиров, белков углеводов ",
             "Можно тут убрать текст?\n"
         )
-        exampleEleven.imageThree = R.drawable.img_norm_calories
+        exampleTwelve.imageThree = R.drawable.img_norm_calories
         //exampleEleven.imageTwo = R.drawable.pelvic_lift2
         // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         healthyEating.add(exampleTwelve)
