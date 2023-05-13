@@ -209,16 +209,16 @@ class Repository private constructor() {
             "Нормы потребления, жиров, белков углеводов ",
             "Можно тут убрать текст?\n"
         )
-        exampleEleven.imageOne = R.drawable.img_norm_calories
+        exampleEleven.imageThree = R.drawable.img_norm_calories
         //exampleEleven.imageTwo = R.drawable.pelvic_lift2
         // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
-        healthyEating.add(exampleEleven)
+        healthyEating.add(exampleTwelve)
 
         val exampleThirteen = ExampleItem(
             "Функции белков, жиров и углеводов",
             "Можно тут убрать текст?\n"
         )
-        exampleThirteen.imageOne = R.drawable.protein_functions
+        exampleThirteen.imageThree = R.drawable.protein_functions
         //exampleEleven.imageTwo = R.drawable.pelvic_lift2
         // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         healthyEating.add(exampleThirteen)
@@ -227,7 +227,7 @@ class Repository private constructor() {
             "Пирамида сбалансированного питания",
             "Можно тут убрать текст?\n"
         )
-        exampleFourteen.imageOne = R.drawable.pyramid_food
+        exampleFourteen.imageThree = R.drawable.pyramid_food
         //exampleEleven.imageTwo = R.drawable.pelvic_lift2
         // exampleThree.imageThree = R.drawable.relaxation_of_the_back_on_the_knees3
         healthyEating.add(exampleFourteen)

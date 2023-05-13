@@ -100,7 +100,7 @@ class ProfileActivity : AppCompatActivity() {
         var value = parseInt(result.get(0).toString())
         if (difference == -1 && value > 0) {
             textView.text = (value - 1).toString() + result.subSequence(1, result.length)
-        } else if (difference == 1 && value<6) {
+        } else if (difference == 1 && value<3) {
             textView.text = (value + 1).toString() + result.subSequence(1, result.length)
         }
     }
